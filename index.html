@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" name="viewport" content="width=device-width" inital-scale=1/>
+      <link rel="stylesheet" href="home.css">
+      <link rel="icon" href="/029Brazil.png">
+      <script src="/game.js"></script>
+    </head>
+    <body>
+      <div class="overlayWrapper" id="overWrap"> 
+        <img class="overlayImage" id="currentFlag" alt="correctFlag" height="300" src="/flags-main/029Brazil.png"> 
+        <div class="overlayImage" id="flagOverlay0" alt="overlayFlag0"></div>
+        <div class="overlayImage" id="flagOverlay1" alt="overlayFlag1"></div>
+        <div class="overlayImage" id="flagOverlay2" alt="overlayFlag2"></div>
+        <div class="overlayImage" id="flagOverlay3" alt="overlayFlag3"></div>
+        <div class="overlayImage" id="flagOverlay4" alt="overlayFlag4"></div>
+        <div class="overlayImage" id="flagOverlay5" alt="overlayFlag5"></div>
+        <div class="overlayImage" id="flagOverlay6" alt="overlayFlag6"></div>
+        <div class="overlayImage" id="flagOverlay7" alt="overlayFlag7"></div>
+        <div class="overlayImage" id="flagOverlay8" alt="overlayFlag8"></div>
+      </div>
+      <button id="startGame" onclick="startGame()">Start</button>
+      <button id="resetPage" onclick="reset()">Reset</button>
+      <h3>Can you guess the name before the flag appears?</h3>
+      <input type="text" id="inputBox" placeholder="Text">
+      <p id="timer">Type the name of the flag before it is fully revealed and wait for a point. Highest point wins.</p>
+      <p id="userInputs">Your Answers: </p>
+      <p id="correctAnswers"></p>
+      <h2 id="score">Press Start </h2>
+    </body>
+
+</html>
+
+
