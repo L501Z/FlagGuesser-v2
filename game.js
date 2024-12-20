@@ -135,7 +135,7 @@ function getCountry(rNum){
             let key = contents.split("\n").join().replace("\r", "").split(",");
             let countryName = key.indexOf(rNum.toString()) + 1;
             let nextCountry = key[countryName];
-            let nextPath = "/flags-main/"+rNum+nextCountry+".png";
+            let nextPath = "/flags-main/flags/"+rNum+nextCountry+".png";
             //there is a bug where this number generates an incompatable file path
             //the statement backtracks to nextFlag to generate a different number
             if (nextCountry === "001"){
