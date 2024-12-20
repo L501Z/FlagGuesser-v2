@@ -12,7 +12,6 @@ function main(){
 }
 
 function startGame(){
-    document.getElementById("saveResults").style.visibility = "hidden";
     document.getElementById("startGame").style.visibility = "hidden";
     nextFlag();
 }
@@ -77,7 +76,7 @@ function nextFlag(){
         document.getElementById("userInputs").innerHTML = "Your answers: " + answerArray;
         document.getElementById("correctAnswers").innerHTML = "Correct Answers: " + correctArray;
         checkAnswers();
-        document.getElementById("saveResults").style.visibility = "visible";
+        changeProgressBar();
         return;
     }
     let rNum = configureNumber(getRandomNumber(201, arr2));
@@ -152,6 +151,16 @@ function checkAnswers(){
         i++;
     }
     gScore.push(score);
+    document.getElementById("score").innerHTML = "Score: "+score+ " / "+aLen;
+}
 
-    document.getElementById("score").innerHTML = score+ " / "+aLen;
+function changeProgressBar(){
+    console.log("gScore[0]");
+    document.getElementById("progressBar").style.visibility = "visible";
+    for (let i =1; i<=gScore[0]; i++){
+        let element = "q"+ i;
+        console.log(element);
+        document.getElementById(element).style.visibility = "visible";
+    }
+    return;
 }

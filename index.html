@@ -3,30 +3,52 @@
     <head>
       <meta charset="UTF-8" name="viewport" content="width=device-width" inital-scale=1/>
       <link rel="stylesheet" href="home.css">
-      <link rel="icon" href="/029Brazil.png">
+      <link rel="icon" href="/flags-main/030Brunei.png">
+
       <script src="/game.js"></script>
     </head>
     <body>
-      <div class="overlayWrapper" id="overWrap"> 
-        <img class="overlayImage" id="currentFlag" alt="correctFlag" height="300" src="/flags-main/029Brazil.png"> 
-        <div class="overlayImage" id="flagOverlay0" alt="overlayFlag0"></div>
-        <div class="overlayImage" id="flagOverlay1" alt="overlayFlag1"></div>
-        <div class="overlayImage" id="flagOverlay2" alt="overlayFlag2"></div>
-        <div class="overlayImage" id="flagOverlay3" alt="overlayFlag3"></div>
-        <div class="overlayImage" id="flagOverlay4" alt="overlayFlag4"></div>
-        <div class="overlayImage" id="flagOverlay5" alt="overlayFlag5"></div>
-        <div class="overlayImage" id="flagOverlay6" alt="overlayFlag6"></div>
-        <div class="overlayImage" id="flagOverlay7" alt="overlayFlag7"></div>
-        <div class="overlayImage" id="flagOverlay8" alt="overlayFlag8"></div>
+      <header id="header"><img src="/icon.jpg" id="worldIcon" alt="worldIcon" height="65%">
+        Can you guess the flag before it fully appears?</header>
+
+      <div class="game" id="middleGame">
+        <div class="game2" id="middleGame">
+          <div class="overlayWrapper" id="overWrap"> 
+            <img class="overlayImage" id="currentFlag" alt="correctFlag" width="100%" src=""> 
+            <div class="overlayImage" id="flagOverlay0" alt="overlayFlag0"></div>
+            <div class="overlayImage" id="flagOverlay1" alt="overlayFlag1"></div>
+            <div class="overlayImage" id="flagOverlay2" alt="overlayFlag2"></div>
+            <div class="overlayImage" id="flagOverlay3" alt="overlayFlag3"></div>
+            <div class="overlayImage" id="flagOverlay4" alt="overlayFlag4"></div>
+            <div class="overlayImage" id="flagOverlay5" alt="overlayFlag5"></div>
+            <div class="overlayImage" id="flagOverlay6" alt="overlayFlag6"></div>
+            <div class="overlayImage" id="flagOverlay7" alt="overlayFlag7"></div>
+            <div class="overlayImage" id="flagOverlay8" alt="overlayFlag8"></div>
+          </div>
+        </div>
+        <div class="game3" id="endGame">
+          <span id="gameControls" >
+            <button id="startGame" class="buttons" onclick="startGame()">Start</button>
+            <button id="resetPage" class="buttons" onclick="reset()">Reset</button>
+          </span>
+          <span id="textInput">
+            <input type="text" id="inputBox" placeholder="Text">
+          </span>
+          <span id="results">
+            <p id="userInputs"></p>
+            <p id="correctAnswers"></p>
+            <h2 id="score"></h2>
+          </span>
+          <div id="progressBar">
+            <div id="q1" class="progressBox"></div>
+            <div id="q2" class="progressBox"></div>
+            <div id="q3" class="progressBox"></div>
+            <div id="q4" class="progressBox"></div>
+            <div id="q5" class="progressBox"></div>
+          </div>
+        </div>
       </div>
-      <button id="startGame" onclick="startGame()">Start</button>
-      <button id="resetPage" onclick="reset()">Reset</button>
-      <h3>Can you guess the name before the flag appears?</h3>
-      <input type="text" id="inputBox" placeholder="Text">
-      <p id="timer">Type the name of the flag before it is fully revealed and wait for a point. Highest point wins.</p>
-      <p id="userInputs">Your Answers: </p>
-      <p id="correctAnswers"></p>
-      <h2 id="score">Press Start </h2>
+
     </body>
 
 </html>
