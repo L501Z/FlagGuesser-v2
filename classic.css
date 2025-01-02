@@ -1,0 +1,110 @@
+@font-face {
+    font-family: font1;
+    src: url(Consolas.ttf);
+  }
+
+html{
+font-family: font1;
+background-color: rgb(226, 226, 233);
+}
+
+#header{
+    position: absolute;
+    font-family: font1;
+    width: 58.4%;
+    height: 8vb;
+    background-color: rgb(206, 206, 206);
+    border-color: rgb(189, 188, 188);
+    border-style:solid;
+    display: flex;
+    align-items: center;
+    padding-left: 40%;
+    margin-top: -0.7%;
+    gap: 2vw;
+}
+
+#header{
+    position: absolute;
+}
+#game{
+    position: absolute;
+    background-color: rgb(90, 85, 85);
+    height: 99%;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+    background-color: rgb(90, 85, 85);
+}
+
+#flagPic{
+    height: 18vw;
+}
+
+#scoreandtimer{
+    margin-top: 2%;
+    font-size: 0.75vw;
+    margin-left: 38%;
+}
+#score{
+    margin-left: 0%;
+}
+#time{
+    display: flex;
+
+}
+#scorecon{
+    display: flex;
+}
+
+.btnset{
+    font-family: font1;
+}
+#countryText{
+    font-family: font1;
+    margin-left: 10%;
+    width: 20vw;
+}
+
+#btnset1{
+    margin-top: 2%;
+
+}
+
+#startandreset{
+    margin-left: 11%;
+    margin-top: 4%;
+    height: 3vw;
+    width: 4vw;
+    padding: 5%;
+    display: flex;
+    gap: 2vw;
+
+}
+#results{
+    font-size: 0.75vw;
+    padding: 5%;
+    margin-top: -8%;
+}
+#totalcorrect{
+    padding: 4%;   
+}
+#percent{
+    margin-left: 46%;
+}
+#footer{
+    margin-top: 60%;
+    position: absolute;
+    font-family: font1;
+    width: 59%;
+    height: 8vb;
+    background-color: rgb(206, 206, 206);
+    border-color: rgb(189, 188, 188);
+    border-style:solid;
+    display: flex;
+    align-items: center;
+    padding-left: 39.5%;
+    gap: 2vw;
+  }
+
+
+

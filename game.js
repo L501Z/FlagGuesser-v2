@@ -1,24 +1,14 @@
 let arr2 = new Array(); 
 let answerArray = new Array();
 let correctArray = new Array();
+let gScore = new Array(); 
 let aLen = arr2.length;
 let firstGame = true;
-let gScore = new Array(); 
-
 
 function main(){
     let arr = createRandArray();
     timer(3000, arr);
-}
-
-function startGame(){
-    document.getElementById("saveResults").style.visibility = "hidden";
-    document.getElementById("startGame").style.visibility = "hidden";
-    nextFlag();
-}
-
-function reset(){
-    location.reload();
+    return;
 }
 
 function createRandArray(){
@@ -34,6 +24,70 @@ function createRandArray(){
     return arr;
 }
 
+function delay(ms){
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function timer(ms, randomList){
+    for (let i=0; i<=8; i++){
+        removeOverlay(9, randomList[i]);
+        await delay(2000);
+    }
+    nextFlag();
+    return;
+}
+
+function startGame(){
+    document.getElementById("startGame").style.visibility = "hidden";
+    nextFlag();
+    return;
+}
+
+function nextFlag(){
+    if (aLen == 5){
+        answerArray.push(document.getElementById("inputBox").value);
+        document.getElementById("userInputs").innerHTML = "Your answers: " + answerArray;
+        document.getElementById("correctAnswers").innerHTML = "Correct Answers: " + correctArray;
+        checkAnswers();
+        changeProgressBar();
+        return;
+    }
+    let rNum = configureNumber(getRandomNumber(201, arr2));
+    if (arr2.includes(rNum)){
+        nextFlag();
+    }
+    arr2.push(rNum);
+    aLen = arr2.length;
+    document.getElementById("score").innerHTML = "Question: "+aLen;
+    getCountry(rNum);
+    setOverlay();
+    main();
+    return;
+}
+
+function checkAnswers(){
+    let i = 0;
+    let score = 0;
+    while (i < correctArray.length) {
+        if (correctArray[i].toLowerCase().trim() === answerArray[i].toLowerCase().trim()){
+            score=score+1;
+        }
+        i++;
+    }
+    gScore.push(score);
+    document.getElementById("score").innerHTML = "Score: "+score+ " / "+aLen;
+    return;
+}
+
+function changeProgressBar(){;
+    document.getElementById("progressBar").style.visibility = "visible";
+    for (let i =1; i<=gScore[0]; i++){
+        let element = "q"+ i;
+        document.getElementById(element).style.visibility = "visible";
+    }
+
+}
+
 function getRandomNumber(range, arr){
     let randNum =  Math.floor(Math.random() * range);
     if (arr.includes(randNum)){
@@ -42,16 +96,12 @@ function getRandomNumber(range, arr){
     return randNum;
 }
 
-function delay(ms){
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
 
-async function timer(ms, randomList){
-    for (let i=0; i<=8; i++){
-        removeOverlay(9, randomList[i]);
-        await delay(1000);
-    }
-    nextFlag();
+function configureNumber(rNum){
+    // adds a 0 or 00 to start of number to match file format
+    if (rNum < 10){ rNum = "0"+"0"+rNum; }
+    else if (rNum >= 10 && rNum < 100){ rNum = "0"+rNum; }
+    return rNum;
 }
 
 function removeOverlay(seconds, overlay){ 
@@ -71,25 +121,12 @@ function removeOverlay(seconds, overlay){
     return;
 }
 
-function nextFlag(){
-    if (aLen == 5){
-        answerArray.push(document.getElementById("inputBox").value);
-        document.getElementById("userInputs").innerHTML = "Your answers: " + answerArray;
-        document.getElementById("correctAnswers").innerHTML = "Correct Answers: " + correctArray;
-        checkAnswers();
-        document.getElementById("saveResults").style.visibility = "visible";
-        return;
+function setOverlay(){
+    for (let i=0; i<=8; i++){
+        let overlay = "flagOverlay";
+        overlay+=i;
+        document.getElementById(overlay).style.opacity = 1;
     }
-    let rNum = configureNumber(getRandomNumber(201, arr2));
-    if (arr2.includes(rNum)){
-        nextFlag();
-    }
-    arr2.push(rNum);
-    aLen = arr2.length;
-    document.getElementById("score").innerHTML = "Question: "+aLen;
-    getCountry(rNum);
-    setOverlay();
-    main();
 }
 
 function getCountry(rNum){
@@ -103,7 +140,6 @@ function getCountry(rNum){
             let nextCountry = key[countryName];
             let nextPath = "/flags-main/"+rNum+nextCountry+".png";
             //there is a bug where this number generates an incompatable file path
-            //the statement backtracks to nextFlag to generate a different number
             if (nextCountry === "001"){
                 nextFlag();
             }
@@ -112,7 +148,9 @@ function getCountry(rNum){
             if (firstGame == true){
                 firstGame = false;
             }else{
-                answerArray.push(document.getElementById("inputBox").value)
+                let answer = document.getElementById("inputBox").value;
+
+                answerArray.push(answer);
             }
             correctArray.push(nextCountry);
             
@@ -127,31 +165,14 @@ function getCountry(rNum){
     return;
 }
 
-function configureNumber(rNum){
-    // adds a 0 or 00 to start of number to match file format
-    if (rNum < 10){ rNum = "0"+"0"+rNum; }
-    else if (rNum >= 10 && rNum < 100){ rNum = "0"+rNum; }
-    return rNum;
+function reset(){
+    location.reload();
+    return;
 }
 
-function setOverlay(){
-    for (let i=0; i<=8; i++){
-        let overlay = "flagOverlay";
-        overlay+=i;
-        document.getElementById(overlay).style.opacity = 1;
-    }
-}
 
-function checkAnswers(){
-    let i = 0;
-    let score = 0;
-    while (i < correctArray.length) {
-        if (correctArray[i].toLowerCase().trim() === answerArray[i].toLowerCase().trim()){
-            score=score+1;
-        }
-        i++;
-    }
-    gScore.push(score);
 
-    document.getElementById("score").innerHTML = score+ " / "+aLen;
-}
+
+
+
+

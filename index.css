@@ -1,0 +1,396 @@
+@font-face {
+    font-family: font1;
+    src: url(Consolas.ttf);
+  }
+
+html{
+font-family: font1;
+background-color: rgb(226, 226, 233);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(14, 11, 11);
+  }
+  
+  /* visited link */
+a:visited {
+    color: rgb(54, 51, 51);
+  }
+/* mouse over link */
+a:hover {
+    color: rgb(219, 174, 197);
+  }
+  
+  /* selected link */
+a:active {
+    color: rgb(91, 91, 104);
+  }
+
+
+.HeFo{
+    position: absolute;
+    width: 98%;
+    height: 4%;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(194, 191, 191);
+    border-width: 0.2vw;
+    border-style: solid;
+    display: flex;
+    gap: 10vw;
+    align-items: center;
+}
+
+#links{
+    text-decoration: none;
+    margin-left: 39%;
+    display: flex;
+    gap: 10vw;
+}
+
+#header{
+    position: absolute;
+
+}
+#outerContainer{
+    position: absolute;
+    background-color: rgb(172, 170, 168);
+    height: 60%;
+    width: 37%;
+    margin-top: 5%;
+    margin-left: 29%;
+    border-radius: 2%;
+    animation-name: backgroundSwitch;
+    animation-duration: 8s;
+    animation-iteration-count: 100;
+    animation-direction: alternate-reverse;  
+    border-radius: 1%;
+}
+
+#slideshowContainer{
+    position: absolute;
+    height: 93%;
+    width: 94%;
+    background-color: rgb(29, 28, 28);
+    margin-top: 3%;
+    margin-left: 3%;
+    animation-name: backgroundSwitch;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;  
+    border-radius: 1%;
+}
+
+@keyframes backgroundSwitch {
+from {background-color: rgb(49, 47, 47);}
+to {background-color: rgb(102, 99, 99);}
+}
+
+
+#slideshow{
+    position: absolute;
+    padding: 2%;
+    margin-left: 7.5%;
+    margin-top: 5%;
+    display: flex;
+    gap: 25vw;
+}
+
+#slidePic{
+    position: absolute;
+    height: 10vw;
+    padding: 2%;
+    margin-top: 4%;
+    margin-left: 12%;
+    max-width: fit-content;
+}
+
+#circles{
+    display: flex;
+    gap: 1vw;
+    margin-top:45%;
+    margin-left: 45%;
+}
+
+.slideCircle{
+    height: 0.5vw;
+    width: 0.5vw;
+    background-color: rgb(117, 116, 116);
+    border-radius: 100%;
+}
+
+
+.slideshowBtn{
+    margin-top: 20%;
+    height: 12%;
+    width: 12%;
+    padding: 2%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(87, 84, 81);
+    border-radius: 100%;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+#circle1{
+    background-color: rgb(197, 189, 189);
+}
+
+#gamecontainer{
+    margin-top: 42%;
+    position: absolute;
+    width: 29%;
+    height: 20%;
+    background-color: rgb(255, 255, 255);
+    margin-left: 33%;
+}
+
+.andorraText{
+    position: absolute;
+    margin-left: 52%;
+    font-size: smaller;
+}
+#regularImage{
+    position: absolute;
+    height: 100%;
+    width: auto;
+}
+
+#text{
+    position: absolute;
+    padding: 2%;
+    color: rgb(209, 199, 199);
+    font-size: 1.25vw;
+}
+
+#p2{
+    margin-top: 6%;
+}
+#p3{
+    margin-top: 9.5%;
+}
+#p4{
+    margin-top: 12.8%;
+}
+#p5{
+    margin-top: 16%;
+}
+#p6{
+    margin-top: 21%;
+}
+#p7{
+    margin-top: 24%;
+}
+
+#secretgame{
+    width: 99%;
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    position: absolute;
+    margin-top: 44%;
+    height: 27%;
+    background-image: url(background.png);
+    background-size: 100%;
+}
+
+#cont{
+    display: flex;
+    gap: 1vw;
+}
+
+#level{
+    margin-left: 15px;
+    margin-top: 23px;
+    font-size: 16px;
+}
+#hearts{
+    margin-top: 1%;
+    margin-left: 3%;
+}
+#secretcontainer{
+    margin-top: 2.8%;
+}
+
+#hits{
+    color:rgb(255, 255, 255);
+    position: sticky;
+    visibility: hidden;
+
+}
+#score{
+    color: white;
+}
+
+.animate{
+    animation: jump 750ms;
+}
+
+.animateShoot{
+    animation: shoot 650ms;
+}
+
+.animateShootLow{
+    animation: shootLow 700ms;
+    animation-timing-function: linear;
+}
+
+@keyframes jump{
+    0% {bottom: 0px;}
+    30%{bottom: 50px; height: 20px;content: url("gamesprite2.3.png");}
+    75%{bottom: 30px;height: 40px; content: url("gamesprite2.3.png") }
+    100%{bottom: 0px;}
+}
+
+@keyframes shoot{
+    0% {left: 0px;bottom: 0px;transform: rotate(25deg); } 
+    6%{left: 100px; bottom: 30px;transform: rotate(28deg);} 
+    12%{left: 200px; bottom: 60px;transform: rotate(32deg);} 
+    100%{left: 300px;bottom: 100px;transform: rotate(45deg);}
+}
+
+@keyframes shootLow{
+    0% {left: 0px;bottom: 0px;transform: rotate(45deg);} 
+    6%{left: 100px; bottom: 10px;transform: rotate(45deg);} 
+    77%{left: 300px; bottom: 10px;transform: rotate(45deg);} 
+    100%{left: 350px; bottom: -10px;transform: rotate(95deg);} 
+}
+
+@keyframes loop {
+    from {right: 0px;}
+    to {right: 2500px;}
+}
+
+#sprites{
+    display: flex;
+}
+
+#spear{
+    visibility: hidden;
+    position: relative; 
+    margin-top: 3%;
+    margin-left: -1.9%;
+}
+
+#user{
+    position: relative;
+    background-color: transparent;
+    height: 40px;
+    width: 50px;
+    margin-left: 35%;
+    margin-top: 2.5%;
+ 
+}
+
+
+
+
+#enemy{    
+    margin-left: 55%;
+    margin-top: -3.5%;
+    width: 50px;
+    height: 100px;
+    position: relative;
+    
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-duration:  6s;  
+    animation-iteration-count: infinite; 
+}
+
+#enemy2{    
+    margin-left: -6.2%;
+    margin-top: -3.5%;
+    width: 50px;
+    height: 100px;
+    position: relative;
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-delay: 4s;
+    animation-duration:  6s;  
+    animation-iteration-count: infinite; 
+}
+
+#enemy3{
+    margin-left: -7.2%;
+    margin-top: -3.5%;
+    width: 50px;
+    height: 90px;
+    position: relative;
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-delay: 8s;
+    animation-duration:  6s;  
+    animation-iteration-count: infinite; 
+}
+
+#enemy4{
+    margin-left: -400px;
+    margin-top: 40px;
+
+}
+
+
+#enemy5{
+    margin-left: -200px;
+    margin-top: 40px;
+}
+
+/*create movement animation , one for left, one for right and the js interval will check if a wall is hit and switch between both*/
+ 
+.animateEnemyMoveLeft{
+    position: relative;
+    animation: moveLeft 700ms;
+    animation-timing-function: linear;
+    animation-name: moveLeft; 
+    animation-duration: 6s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite; 
+
+}
+
+
+@keyframes moveLeft{
+    0% {left: 0px; transform: scaleY(1); transform: scaleX(1);bottom: 3px;} 
+    12.5%{left: 100px; transform: scaleY(1.15); transform: scaleX(1.15);bottom: 6px;} 
+    25%{left: 100px; transform: scaleY(1); transform: scaleX(1);bottom: 6px;} 
+    37.5%{left: 100px; transform: scaleY(1.15); transform: scaleX(1.15);bottom: 6px;} 
+    50%{left: 200px; transform: scaleY(1); transform: scaleX(1);bottom: 3px;} 
+    62.5%{left: 200px; transform: scaleY(1.15); transform: scaleX(1.15);bottom: 3px;} 
+    75%{left: 100px; transform: scaleY(1); transform: scaleX(1);bottom: 6px;} 
+    87.5%{left: 100px; transform: scaleY(1.15); transform: scaleX(1.15);bottom: 6px;} 
+    100%{left: 0px; transform: scaleY(1); transform: scaleX(1);bottom: 0px;} 
+}
+
+/* create charging animation for bridge goblin*/
+
+.animateGoblinCharge{
+    position: relative;
+    animation: goblinCharge 5s;
+    animation-timing-function: linear;
+}
+
+@keyframes goblinCharge{
+    0%{left: 100px; bottom: 5px;}
+    20%{left: 0px; bottom: 10px;transform: scaleY(1.15); transform: scaleX(1.15)}
+    100%{left: -700px; bottom: -10px;}
+}
+
+/*create death animation for enemies */
+#footer{
+    display: flex;
+    padding-left: 32.5%;
+    width: 66%;
+    position: absolute;
+    margin-top: 60%;
+    display: flex;
+    gap: 10vw;
+    align-items: center;
+}
+
+

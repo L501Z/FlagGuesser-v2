@@ -1,72 +1,198 @@
+@font-face {
+  font-family: font1;
+  src: url(Consolas.ttf);
+}
+
+html{
+  font-family: font1;
+  background-color: rgb(226, 226, 233);
+}
+
+#header{
+  position: absolute;
+  font-family: font1;
+  width: 62.4%;
+  height: 8vb;
+  background-color: rgb(206, 206, 206);
+  border-color: rgb(189, 188, 188);
+  border-style:solid;
+  display: flex;
+  align-items: center;
+  padding-left: 36%;
+  gap: 2vw;
+}
+
+#worldIcon{
+  margin-left: -30px;
+}
+
+.game{
+  height: 99%;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 10%;
+  background-color: rgb(90, 85, 85);
+  position: absolute;
+}
+
+  .overlwayWrapper {
+
+    position: relative;
+
+    }
+    .overlayImage {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+
+#currentFlag{
+  height: 38%;
+  width: 100%;
+
+}
+
 #flagOverlay0{
-  height: 100px;
-  width: 143px;
-  background-color: black;
+  height: 12.6%;
+  width: 33.3%;
+  background-color: black;  
 }
 #flagOverlay1{
-  margin-left: 143px;
-  height: 100px;
-  width: 143px;
+  margin-left: 33.3%;
+  height: 12.6%;
+  width: 33.3%;
   background-color: black;
 }
 #flagOverlay2{
-  margin-left: 286px;
-  height: 100px;
-  width: 143px;
+  margin-left: 66.6%;
+  height: 12.6%;
+  width: 33.3%;
   background-color: black;
 }
 #flagOverlay3{
-  margin-top: 100px;
-  height: 100px;
-  width: 143px;
+  margin-top: 21.5%;
+  height: 12.6%;
+  width: 33.3%;
   background-color: black;
 }
 #flagOverlay4{
-  margin-top: 100px;
-  margin-left: 143px;
-  height: 100px;
-  width: 143px;
+  margin-top: 21.5%;
+  margin-left: 33.3%;
+  height: 12.6%;
+  width: 33.3%;;
   background-color: black;
 }
 #flagOverlay5{
-  margin-top: 100px;
-  margin-left: 286px;
-  height: 100px;
-  width: 143px;
+  margin-top: 21.5%;
+  margin-left: 66.6%;
+  height: 12.6%;
+  width: 33.3%;
   background-color: black;
 }
 #flagOverlay6{
-  margin-top: 200px;
-  margin-left: 143px;
-  height: 100px;
-  width: 143px;
+  margin-top: 43%;
+  height: 12.9%;
+  width: 33.3%;
   background-color: black;
 }
 #flagOverlay7{
-  margin-top: 200px;
-  margin-left: 286px;
-  height: 100px;
-  width: 143px;
+  margin-top: 43%;
+  margin-left: 33.3%;
+  height: 12.9%;
+  width: 33.3%;
   background-color: black;
 }
 #flagOverlay8{
-  margin-top: 200px;
-  height: 100px;
-  width: 143px;
+  margin-top: 43%;
+  margin-left: 66.6%;
+  height: 12.9%;
+  width: 33.3%;
   background-color: black;
 }
 
-#startGame{
-    margin-top: 300px;
-    height: 30px;
-    width: 50px;
+.buttons{
+  margin-top: 65%;
+  font-family: font1;
+  height: 3vw;
+  width: 4vw;
 }
 
-.overlwayWrapper {
-  position: relative;
-  }
-  .overlayImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+#gameControls{
+  padding: 5%;
+  display: flex;
+  gap: 5vw;
+}
+
+#endGame{
+  padding: 5%;
+  margin-top: 43%;
+  margin-left: 21%;
+}
+
+#inputBox{
+  font-family: font1;
+  margin-left: -15%;
+  width: 20vw;
+}
+
+#score{
+  margin-left: 10%;
+}
+
+#userInputs{
+  margin-left: -16%;
+  color: rgb(255, 255, 255);
+}
+
+#correctAnswers{
+  margin-left: -16%;
+  margin-right: 30%;
+  color: rgb(255, 255, 255);
+}
+
+#progressBar{
+  position: absolute;
+  visibility: hidden;
+  margin-top: 7%;
+  margin-left: -12%;
+  width: 70%;
+  height: 5.3%;
+  background-color: rgb(201, 39, 39);
+}
+
+.progressBox{
+  width: 20%;
+  height: 50px;
+  background-color: rgb(104, 190, 46);
+  position: absolute;
+  visibility: hidden;
+}
+
+#q2{
+  margin-left: 20%;
+}
+#q3{
+  margin-left: 40%;
+}
+#q4{
+  margin-left: 60%;
+}
+#q5{
+  margin-left: 80%;
+}
+#footer{
+  margin-top: 60%;
+  position: absolute;
+  font-family: font1;
+  width: 59%;
+  height: 8vb;
+  background-color: rgb(206, 206, 206);
+  border-color: rgb(189, 188, 188);
+  border-style:solid;
+  display: flex;
+  align-items: center;
+  padding-left: 39.5%;
+  gap: 2vw;
+}

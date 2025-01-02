@@ -1,34 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="UTF-8" name="viewport" content="width=device-width" inital-scale=1/>
-      <link rel="stylesheet" href="home.css">
-      <link rel="icon" href="/029Brazil.png">
-      <script src="/game.js"></script>
-    </head>
-    <body>
-      <div class="overlayWrapper" id="overWrap"> 
-        <img class="overlayImage" id="currentFlag" alt="correctFlag" height="300" src="/flags-main/029Brazil.png"> 
-        <div class="overlayImage" id="flagOverlay0" alt="overlayFlag0"></div>
-        <div class="overlayImage" id="flagOverlay1" alt="overlayFlag1"></div>
-        <div class="overlayImage" id="flagOverlay2" alt="overlayFlag2"></div>
-        <div class="overlayImage" id="flagOverlay3" alt="overlayFlag3"></div>
-        <div class="overlayImage" id="flagOverlay4" alt="overlayFlag4"></div>
-        <div class="overlayImage" id="flagOverlay5" alt="overlayFlag5"></div>
-        <div class="overlayImage" id="flagOverlay6" alt="overlayFlag6"></div>
-        <div class="overlayImage" id="flagOverlay7" alt="overlayFlag7"></div>
-        <div class="overlayImage" id="flagOverlay8" alt="overlayFlag8"></div>
+<html lang="en" onclick="jump()">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width" inital-scale=1/>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/flags-main/025Bhutan.png">
+    <script src="slideshow.js"></script>
+    <script src="secretgame.js"></script>
+  </head>
+  <body>
+    <header id="header" class="HeFo"> 
+      <div id="links">
+        <a href="classic.html" id="classicHeader">Classic</a>
+        <a href="reveal.html">Reveal</a>
       </div>
-      <button id="startGame" onclick="startGame()">Start</button>
-      <button id="resetPage" onclick="reset()">Reset</button>
-      <h3>Can you guess the name before the flag appears?</h3>
-      <input type="text" id="inputBox" placeholder="Text">
-      <p id="timer">Type the name of the flag before it is fully revealed and wait for a point. Highest point wins.</p>
-      <p id="userInputs">Your Answers: </p>
-      <p id="correctAnswers"></p>
-      <h2 id="score">Press Start </h2>
-    </body>
+    </header>
 
+    <div id="outerContainer">
+      <div id="slideshowContainer">
+        <span id="slideshow">
+          <button id="leftBtn" class="slideshowBtn" onclick="changeFlag()">	&#60;</button>
+          <img src="flags-main/160Seychelles.png" id="slidePic">
+          <button id="rightBtn" class="slideshowBtn" onclick="changeFlag();changeFlag();">&#62;</button>
+        </span>
+        <span id="circles">
+          <div id="circle1" class="slideCircle"></div>
+          <div id="circle2" class="slideCircle"></div>
+          <div id="circle3" class="slideCircle"></div>
+        </span>
+        <span id="flagText">
+          <p id="text">June 18, 1996. The colours of the flag are blue (for sky and sea), yellow (for the life-giving sun), red (for the people and their work for unity and love), white (for social justice and harmony), and green (for the land and natural environment).</p>
+        </span>
+      </div>
+    </div>
+
+    <div id="gamecontainer" >
+
+      <div id="game">
+        <img src="flags-main/006Andorra.png " id="regularImage" onclick="launchGame()" >  
+   
+          <p class="andorraText" id="p1">Creation of Andorra's flag  </p>
+          <p class="andorraText" id="p2">looks like three equal parts,</p>
+          <p class="andorraText" id="p3">in fact the middle length is </p>
+          <p class="andorraText" id="p4">covering more area. Also,</p>
+          <p class="andorraText" id="p5">krygistan is another </p>
+          <p class="andorraText" id="p6">Mountainous country for  </p>
+          <p class="andorraText" id="p7">example thats landlocked.</p>
+      </div>
+
+    </div>
+    <div id="secretgame" >
+      <div id="cont">
+        <h2 id="level">Level: Cave</h2>
+        <div id="hearts">
+          <img src="lifeheart.png" id="h1" height="25px" width="25px" id="enemypic">
+          <img src="lifeheart.png" id="h2" height="25px" width="25px" id="enemypic">
+          <img src="lifeheart.png" id="h3" height="25px" width="25px" id="enemypic">
+          <img src="lifeheart.png" id="h4" height="25px" width="25px" id="enemypic">
+          <img src="lifeheart.png" id="h5" height="25px" width="25px" id="enemypic">
+        </div>
+        <h2 id="hits">Hits: 0 </h2>
+        <h2 id="score">score: </h2>
+      </div>
+      <div id="secretcontainer">
+      <div id="sprites">       
+          <div id="user"><img src="gamesprite2.png" height="50px" width="50px" id="userpic"></div>
+          <div id="spear" ><img src="spear.png" id="spear12" height="25px" width="25px"></div>
+          <div id="enemy"> <img src="gamesprite4.png" id="enem1" height="170px" width="50px"></div>
+          <div id="enemy2"> <img src="gamesprite1.png" id="enem2" height="170px" width="50px"></div>
+          <div id="enemy3"> <img src="gamesprite7.png" id="enem3" height="164px" width="50px"></div>
+          <div id="enemy4"> <img src="/enemies/enemy1A.png" id="enem4" height="50px" width="50px"></div>
+
+          
+      </div>
+
+      </div>
+
+
+    </div>
+
+
+    <footer id="footer" class="HeFo">
+      <a href="classic.html">Classic</a>
+      <a href="reveal.html">Reveal</a>
+      <a href="https://www.whichflags.com">whichflags</a>
+    </footer>
+
+  </body>
 </html>
-
-

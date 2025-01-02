@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width" inital-scale=1/>
+        <link rel="stylesheet" href="classic.css">
+        <link rel="icon" href="/flags-main/089Italy.png">
+        <script src="classic.js"></script>
+    </head>
+    <body>
+        <header id="header"><a href="index.html" ><img src="/icon.jpg" id="worldIcon" alt="worldIcon" height="50px"></a>
+            How many flags do you know?</header>
+        <div id = game>
+
+            <div id="image">
+                <img id = "flagPic" src = "flags-main/029Brazil.png" alt ="starterpic" width="100%">
+            </div>
+
+            <div id ="scoreandtimer">
+                <div id="time">
+                    <h1>Time: </h1>
+                    <h1 id = "timer">60</h1>
+                </div>
+                <div id="scorecon">
+                    <h1>Score:</h1>
+                    <h1 id = "score">0</h1>
+                </div>
+            </div>
+
+            <div id = buttons>
+                <div id = "btnset1">
+                    <input id = "countryText" class = "btns" placeholder="Type here">
+                    <button id ="nextflag" title = "nextflagbutton" class = "btnset" onclick="guessButton(countryName)">Guess</button>
+                </div>
+                <div id = "btnset2">
+                    <div id="startandreset">
+                        <button id = "startGame" title="startGame" class = "btnset" onclick="newGame()">Start</button>
+                        <button id = "resetbutton" title = "resetbtn" class = "btnset"  onclick="reset()">Reset</button>
+                        <button id ="30s" title = "30seconds" class = "btnset" onclick="thirtySeconds()">30s</button>
+                        <button id ="60s" title = "60seconds" class = "btnset" onclick="sixtySeconds()">60s</button>
+                        <button id ="90s" title = "90seconds" class = "btnset" onclick="ninetySeconds()">90s</button>
+                    </div>
+
+                </div>
+            </div>
+            <div id = "results">   
+                <h1 id = "correctanswer"></h1>
+                <h1 id = "totalcorrect"></h1>
+                <h1 id = "percent"></h1>
+            </div>
+        </div>
+        <footer id="footer">Thanks for playing!
+            <a href="https://www.whichflags.com">whichflags</a>
+        </footer>
+    </body>
+    <h1 id = "randomarray"></h1>
+</html>
